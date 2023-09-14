@@ -9,6 +9,7 @@
               <th>Data de Início</th>
               <th>Data de Término</th>
               <th>Data de Entrega</th>
+              <th>Conceito</th>
             </tr>
           </ng-template>
           <ng-template pTemplate="body" let-atividade>
@@ -38,6 +39,7 @@
                     | date : "EEEE, HH:mm - dd/MM/yyyy " : " +0000" : "pt-BR"
                 }}
               </td>
+              <td>{{ atividade.conceitos }}</td>
               <!-- <td>{{ atividade.dataInicio }}</td> -->
             </tr>
           </ng-template>

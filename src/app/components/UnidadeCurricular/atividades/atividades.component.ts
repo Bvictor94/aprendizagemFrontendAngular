@@ -25,6 +25,7 @@ export class AtividadesComponent implements OnInit {
   encontros: Encontro[];
   situacoesAprendizagem: SituacaoAprendizagem[];
   loading: boolean = true;
+  conceitos: string;
 
   constructor(
     private unidadeCurricularService: UnidadeCurricularService,
@@ -40,7 +41,11 @@ export class AtividadesComponent implements OnInit {
     this.obterUnidadesCurriculares();
     this.obterAtividades();
     this.obterEncontros();
+    this.obterConceitos();
     // this.obterSituacoesAprendizagem();
+  }
+  obterConceitos() {
+    throw new Error('Method not implemented.');
   }
 
   obterUnidadesCurriculares = () => {
@@ -50,12 +55,12 @@ export class AtividadesComponent implements OnInit {
     })
   }
 
-  obterAtividades = () => {
-    this.atividadeService.ObterAtividadesRecentesPeloUsuarioId("1").subscribe((resultado) => {
-      this.atividades = resultado;
-      console.log(this.atividades);
-    })
-  }
+ obterAtividades = () => {
+  this.atividadeService.ObterAtividadesRecentesPeloUsuarioId("1").subscribe((resultado) => {
+    this.atividades = resultado;
+    console.log(this.atividades);
+  });
+}
 
   obterEncontros(){
     this.encontroService.ObterEncontros().subscribe((resultado) => {
